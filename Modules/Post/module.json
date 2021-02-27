@@ -1,0 +1,13 @@
+{
+    "name": "Post",
+    "alias": "post",
+    "description": "The FleetCart Post Module.",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Post\\Providers\\CategoryPostServiceProvider",
+        "Modules\\Post\\Providers\\PostServiceProvider",
+        "Modules\\Post\\Providers\\RouteServiceProvider",
+        "Modules\\Post\\Providers\\EventServiceProvider"
+    ]
+}
