@@ -1,19 +1,16 @@
-@if ($categories->isNotEmpty())
-    <div class="filter-section clearfix">
-        <h4>{{ trans('storefront::products.category') }}</h4>
-
-        <ul class="filter-category list-inline">
+<aside class="widget widget_product_categories">
+    <h3 class="widget-title">Danh Mục</h3>
+    <ul class="product-categories">
+        @if($categories->isNotEmpty())
             @foreach ($categories as $category)
-                <li class="{{ request('category') === $category->slug ? 'active' : '' }}">
-                    <a href="{{ request()->fullUrlWithQuery(['category' => $category->slug, 'page' => 1]) }}">
-                        {{ $category->name }}
-                    </a>
-
+                <li class="hassub">
+                    <a href="{{ request()->fullUrlWithQuery(['category' => $category->slug, 'page' => 1]) }}" title="{{ $category->name }}">{{ $category->name }}</a>
                     @if ($category->items->isNotEmpty())
                         @include('public.products.partials.sub_category_filter', ['subCategories' => $category->items])
                     @endif
                 </li>
             @endforeach
-        </ul>
-    </div>
-@endif
+        @endif
+    </ul>
+</aside>
+

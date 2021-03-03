@@ -12,115 +12,121 @@
 @endpush
 
 @section('content')
-    <div id="maincontent">
-        <div class="banner-web clearfix">
-            <img src="{{ asset('frontend/img/SLIDE.jpg') }}" alt="">
-            <div class="breadcrumb" typeof="BreadcrumbList">
-                <div class="container">
-                    <span property="itemListElement" typeof="ListItem">
-                        <a property="item" typeof="WebPage" title="{{ trans('storefront::products.shop') }}" href="{{ route('home') }}" class="home">
-                            <span property="name">{{ trans('storefront::products.shop') }}</span>
-                        </a>
-                        <meta property="position" content="1">
-                    </span>
-                    <span>|</span>
-                    <span property="itemListElement" typeof="ListItem">
-                        <span property="name">{{ $product->name }}</span>
-                        <meta property="position" content="2">
-                    </span>
+    <div class="main-content">
+        <div class="container">
+            <div class="banner-header banner-lbook3">
+                <img src="{{ asset('assets/images/banner-catalog1.jpg') }}" alt="Banner-header">
+                <div class="text">
+                    <p><a href="{{ route('home') }}" title="Trang chủ">Trang chủ</a><i class="fa fa-caret-right"></i>{{ $product->name }}</p>
                 </div>
             </div>
         </div>
-        <div id="content" class="container">
-            @if (session()->has('success') )
-                <div class="info-success">
-                     {{ session()->get('success') }}
+        <div class="container">
+            <div class="product-details-content">
+                <div class="col-md-6 col-sm-6 slide-vertical">
+                    <div class="slider-for">
+                        <div>
+                              <span class="zoom">
+                                <img class="zoom-images" src="{{ asset('assets/images/products/details/1.jpg') }}" alt="images">
+                              </span>
+                        </div>
+                        <div>
+                              <span class="zoom">
+                              <img class="zoom-images" src="{{ asset('assets/images/products/details/2.jpg') }}" alt="images">
+                              </span>
+                        </div>
+                        <div>
+                              <span class="zoom">
+                              <img class="zoom-images" src="{{ asset('assets/images/products/details/3.jpg') }}" alt="images">
+                              </span>
+                        </div>
+                        <div>
+                              <span class="zoom">
+                              <img class="zoom-images" src="{{ asset('assets/images/products/details/4.jpg') }}" alt="images">
+                              </span>
+                        </div>
+                    </div>
+                    <!-- End slider-for -->
+                    <div class="slider-nav">
+                        <div>
+                            <img src="{{ asset('assets/images/products/details/1.jpg') }}" alt="images">
+                        </div>
+                        <div>
+                            <img src="{{ asset('assets/images/products/details/2.jpg') }}" alt="images">
+                        </div>
+                        <div>
+                            <img src="{{ asset('assets/images/products/details/3.jpg') }}" alt="images">
+                        </div>
+                        <div>
+                            <img src="{{ asset('assets/images/products/details/4.jpg') }}" alt="images">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="box-details-info">
+                        <div class="product-name">
+                            <h1>{{ $product->name }}</h1>
+                        </div>
+                        <div class="wrap-price">
+                            <p class="price">{{ product_price($product) }}</p>
+                        </div>
+                    </div>
+                    <!-- End box details info -->
+                    <div class="options">
+                        <p>{!! $product->short_description !!}</p>
+
+                        <div class="social box">
+                            <h3>Chia sẻ:</h3>
+                            <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
+                            <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
+                            <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
+                            <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
+                            <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
+                        </div>
+                        <!-- End share -->
+                    </div>
+                    <!-- End Options -->
+                </div>
+            </div>
+            <!-- End product-details-content -->
+            <div class="hoz-tab-container space-padding-tb-30">
+                <ul class="tabs">
+                    <li class="item" rel="description">Mô tả</li>
+                </ul>
+                <div class="tab-container">
+                    <div id="description" class="tab-content">
+                        <div class="text">
+                            {!! $product->description !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if($relatedProducts->count() > 0)
+                <!-- tab-container -->
+                <div class="title-text-v2 space-60">
+                    <h3>Sản phẩm khác</h3>
+                </div>
+                <!-- End title -->
+                <div class="upsell-product products furniture hover-shadow ver2 owl-carousel">
+                    @if($products->count() > 0)
+                        @foreach($products as $product)
+                            <div class="item-inner">
+                                <div class="product">
+                                    <div class="product-images">
+                                        <a href="{{ route('products.show', $product->slug) }}" title="product-images">
+                                            <img class="primary_image" src="{{ optional($product->base_image)->path }}" alt="">
+                                            <img class="secondary_image" src="{{ optional($product->base_image)->path }}" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="{{ route('products.show', $product->slug) }}" title="{{ $product->name }}"><p class="product-title">{{ $product->name }}</p></a>
+                                    <p class="product-price">{{ product_price($product) }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             @endif
-            <div class="box-project clearfix">
-                <h1 class="title-pro">{{ $product->name }}</h1>
-                <div class="all-box clearfix">
-                    <div class="info-product row clearfix">
-                        <div class="img col-md-6">
-                            <img width="550" height="698" src="{{ optional($product->base_image)->path }}" class="attachment-full size-full wp-post-image" alt="AZ 8476">
-                        </div>
-                        <div class="col-md-6 ">
-                            <div class="info clearfix">
-                                <div class="title-pro">Thông tin</div>
-                                    {!! $product->short_description !!}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-post clearfix">
-                        <div class="title-pro">Mô tả</div>
-                        {!! $product->description !!}
-                    </div>
-                    <div class="tags clearfix"></div>
-                </div>
-                <form method="post" action="{{ route('contacts.store') }}" class="form-contact">
-                    @csrf
-                    <div class="form-row">
-                        <div class="col">
-                            <label for="fullname">Họ và tên <span class="error-message">*</span></label>
-                            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Nhập họ tên">
-                            {!! $errors->first('fullname', '<span class="error-message">:message</span>') !!}
-                        </div>
-                        <div class="col">
-                            <label for="address">Địa chỉ <span class="error-message">*</span></label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ">
-                            {!! $errors->first('address', '<span class="error-message">:message</span>') !!}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col">
-                            <label for="phone">Số điện thoại <span class="error-message">*</span></label>
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại">
-                            {!! $errors->first('phone', '<span class="error-message">:message</span>') !!}
-                        </div>
-                        <div class="col">
-                            <label for="email">Email <span class="error-message">*</span></label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" placeholder="Nhập email">
-                            {!! $errors->first('email', '<span class="error-message">:message</span>') !!}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="content">Nội dung <span class="error-message">*</span></label>
-                        <textarea class="form-control" name="body" id="body" rows="3"></textarea>
-                        {!! $errors->first('body', '<span class="error-message">:message</span>') !!}
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-contact">Gửi</button>
-                </form>
-
-                @if($relatedProducts->count() > 0)
-                <div class="related-project related widget clearfix">
-                    <div class="title-pro">Sản phẩm khác</div>
-                    <div class="list-project list-slider owl-carousel owl-theme" style="opacity: 1; display: block;">
-                        <div class="col-carousel">
-                            <div class="owl-carousel carousel-main">
-                                @foreach($relatedProducts as $relatedProduct)
-                                    <div class="product-item item-home">
-                                        <div class="img">
-                                            <a href="{{ route('products.show', $product->slug) }}">
-                                                <img width="550" height="698" src="{{ optional($product->base_image)->path }}"class="attachment-medium size-medium wp-post-image" alt="AZ 8476"/>
-                                            </a>
-                                            <button class="add-icon">
-                                                <a href="{{ route('products.show', $product->slug) }}">
-                                                    <i class="fa fa-search-plus"></i>
-                                                </a>
-                                            </button>
-                                        </div>
-                                        <div class="info clearfix">
-                                            <div class="title">
-                                                <h3><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h3></div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endif
-            </div>
         </div>
+        <!-- End container -->
     </div>
 @endsection

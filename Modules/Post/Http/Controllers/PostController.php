@@ -31,7 +31,8 @@ class PostController extends Controller
         }else{
             abort(404);
         }
-        return view('public.posts.index', compact('posts', 'category'));
+        $categories = CategoryPost::where('parent_id', 0)->with('children')->latest()->take(3)->get();
+        return view('public.posts.index', compact('posts', 'category', 'categories'));
     }
 
     /**

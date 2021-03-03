@@ -45,7 +45,7 @@ class ProductController extends Controller
             $productIds = (clone $query)->select('products.id')->resetOrders()->pluck('id');
         }
 
-        $products = $query->paginate(request('perPage', 12))
+        $products = $query->paginate(request('perPage', 6))
             ->appends(request()->query());
 
         if (request()->wantsJson()) {
