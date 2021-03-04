@@ -32,11 +32,9 @@
                 <div class="col-md-3 col-sm-6">
                     <h3 class="title-footer">Thông tin thêm</h3>
                     <ul class="list-footer">
-                        <li><a href="#" title="title">1</a></li>
-                        <li><a href="#" title="title">2</a></li>
-                        <li><a href="#" title="title">3</a></li>
-                        <li><a href="#" title="title">4</a></li>
-                        <li><a href="#" title="title">5</a></li>
+                        <li><a href="{{ route('home') }}" title="Trang chủ">Trang chủ</a></li>
+                        <li><a href="{{ route('home') }}/liên-hệ" title="Liên Hệ">Liên Hệ</a></li>
+                        <li><a href="{{ route('home') }}/giới-thiệu" title="Giới thiệu">Giới thiệu</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">
