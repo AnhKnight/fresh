@@ -25,41 +25,25 @@
             <div class="product-details-content">
                 <div class="col-md-6 col-sm-6 slide-vertical">
                     <div class="slider-for">
-                        <div>
-                              <span class="zoom">
-                                <img class="zoom-images" src="{{ asset('assets/images/products/details/1.jpg') }}" alt="images">
-                              </span>
-                        </div>
-                        <div>
-                              <span class="zoom">
-                              <img class="zoom-images" src="{{ asset('assets/images/products/details/2.jpg') }}" alt="images">
-                              </span>
-                        </div>
-                        <div>
-                              <span class="zoom">
-                              <img class="zoom-images" src="{{ asset('assets/images/products/details/3.jpg') }}" alt="images">
-                              </span>
-                        </div>
-                        <div>
-                              <span class="zoom">
-                              <img class="zoom-images" src="{{ asset('assets/images/products/details/4.jpg') }}" alt="images">
-                              </span>
-                        </div>
+                        @foreach ($product->additional_images as $additionalImage)
+                            @if ($additionalImage->exists)
+                                <div>
+                                    <span class="zoom">
+                                        <img class="zoom-images" src="{{ $additionalImage->path }}"  alt="{{ $product->name }}">
+                                    </span>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                     <!-- End slider-for -->
                     <div class="slider-nav">
-                        <div>
-                            <img src="{{ asset('assets/images/products/details/1.jpg') }}" alt="images">
-                        </div>
-                        <div>
-                            <img src="{{ asset('assets/images/products/details/2.jpg') }}" alt="images">
-                        </div>
-                        <div>
-                            <img src="{{ asset('assets/images/products/details/3.jpg') }}" alt="images">
-                        </div>
-                        <div>
-                            <img src="{{ asset('assets/images/products/details/4.jpg') }}" alt="images">
-                        </div>
+                        @foreach ($product->additional_images as $additionalImage)
+                            @if ($additionalImage->exists)
+                                <div>
+                                    <img src="{{ $additionalImage->path }}" alt="{{ $product->name }}">
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
