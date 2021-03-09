@@ -23,7 +23,7 @@
         </div>
         <div class="container">
             <div class="product-details-content">
-                <div class="col-md-6 col-sm-6 slide-vertical">
+                <div class="col-md-6 col-sm-6">
                     <div class="slider-for">
                         @foreach ($product->additional_images as $additionalImage)
                             @if ($additionalImage->exists)
@@ -57,8 +57,6 @@
                     </div>
                     <!-- End box details info -->
                     <div class="options">
-                        <p>{!! $product->short_description !!}</p>
-
                         <div class="social box">
                             <h3>Chia sẻ:</h3>
                             <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
@@ -70,17 +68,40 @@
                         <!-- End share -->
                     </div>
                     <!-- End Options -->
-                </div>
-            </div>
-            <!-- End product-details-content -->
-            <div class="hoz-tab-container space-padding-tb-30">
-                <ul class="tabs">
-                    <li class="item" rel="description">Mô tả</li>
-                </ul>
-                <div class="tab-container">
-                    <div id="description" class="tab-content">
-                        <div class="text">
-                            {!! $product->description !!}
+                    <div class="accordion box space-100">
+                        <div class="accordion accordion-v2">
+                            <div class="panel-group" id="accordion-v2">
+                                @if(!empty($product->short_description))
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-v2" href="#collapse-v2-One" aria-expanded="true" class="">
+                                                Mô tả ngắn
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse-v2-One" class="panel-collapse active collapse in">
+                                        <div class="panel-body">
+                                            {!! $product->short_description !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-v2" href="#collapse-v2-Two" aria-expanded="true">
+                                                Mô tả
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse-v2-Two" class="panel-collapse active collapse in">
+                                        <div class="panel-body">
+                                            {!! $product->description !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
