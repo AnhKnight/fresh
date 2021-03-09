@@ -26,11 +26,12 @@ class PostController extends Controller
         if (request()->has('category')) {
             $category = $model->where('slug', \request('category'))->with('translations')->firstOrFail();
             $posts = Post::with('user')->whereHas('categories', function ($query){
-                $query->where('is_active', 1);
-            })->paginate(12)->appends(request()->query());;
+                $query->where('is_active', 1)->where('slug', request('category'));
+            })->paginate(12)->appends(request()->query());
         }else{
             abort(404);
         }
+
         $categories = CategoryPost::where('parent_id', 0)->with('children')->latest()->take(3)->get();
         return view('public.posts.index', compact('posts', 'category', 'categories'));
     }
