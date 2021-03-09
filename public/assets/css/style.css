@@ -3085,7 +3085,7 @@ ul.tabs.tabs-title li span.count {
 
 @media (max-width: 480px) {
   .featured-products.new-arrivals .products .product {
-    width: 100%;
+    width: 50%;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -10543,7 +10543,7 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
 }
 
 .products.ver2 .product p.product-title, .products.ver2 .product .product-price-old, .products.ver2 .product .product-price {
-  margin-top: -80px;
+  margin-top: -50px;
   position: relative;
   z-index: 2;
 }
@@ -10593,7 +10593,7 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
 }
 
 .products.border-space-product .product .product-images {
-  overflow: hidden;
+  overflow: inherit;
 }
 
 .products.border-space-product .product:hover .product-images {
