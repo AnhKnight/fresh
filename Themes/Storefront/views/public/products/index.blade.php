@@ -18,7 +18,7 @@
             <p><a href="{{ route('home') }}" title="Trang chủ">Trang chủ</a><i class="fa fa-caret-right"></i>@if(!empty($category))  {{ $category->name }} @elseif(request('query')) {{ request('query') }} @endif</p>
         </div>
     </div>
-    <div class="container">
+    <div class="container container-ver2">
         <div id="primary" class="col-xs-12 col-md-9">
             <div class="products ver2 grid_full grid_sidebar hover-shadow furniture">
                 @if($products->count() > 0)

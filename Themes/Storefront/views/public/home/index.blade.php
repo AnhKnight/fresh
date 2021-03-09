@@ -41,7 +41,7 @@
     @if($categories->count() > 0)
         @foreach($categories as $category)
             @php $indexFirst = $loop->index * 5 @endphp
-            <div class="container">
+            <div class="container container-ver2">
                 <div class="title-text-v2">
                     <h3>{{ $category->name }}</h3>
                 </div>

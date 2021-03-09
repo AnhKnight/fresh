@@ -2989,7 +2989,7 @@ ul.tabs.tabs-title li span.count {
 
 @media (min-width: 1200px) {
   .featured-products.home_2 .products .product {
-    width: 20%;
+    width: 25%;
   }
 }
 
@@ -10271,7 +10271,7 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
 }
 
 .products.grid_full.grid_sidebar .item-inner {
-  width: 25%;
+  width: 33.33%;
   transition: all 0.3s ease 0s;
 }
 
@@ -20742,4 +20742,3 @@ nav.megamenu-v2 ul.main-menu li:last-child {
     padding-left: 20px;
     padding-right: 20px;
 }
-
