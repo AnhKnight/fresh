@@ -12,6 +12,12 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
     <script type="text/javascript" src="{{ asset('assets/js/jquery-3.2.0.min.js') }}"></script>
     @stack('css')
+    <style>
+        .tp-simpleresponsive{
+            max-height: 500px !important;
+            height: 500px !important;
+        }
+    </style>
 </head>
 <body>
 <div class="awe-page-loading">

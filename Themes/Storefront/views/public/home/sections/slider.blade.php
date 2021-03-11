@@ -19,7 +19,7 @@
         </div>
 
         <!-- LAYER NR. 3 -->
-        <div class="tp-caption color-2b2b2b font-ros weight-400 skewfromleft customout size-20 letter-spacing-2"
+        <div class="tp-caption color-2b2b2b font-ros weight-400 skewfromleft customout size-50 letter-spacing-2"
              data-x="505"
              data-y="403"
              data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
@@ -33,9 +33,9 @@
         </div>
 
         <!-- LAYER NR. 7 -->
-        <div class="tp-caption skewfromleft customout font-roc link-1 bg-brand color-white height-40 size-16"
+        <div class="tp-caption skewfromleft customout font-roc link-1 bg-brand color-white height-40 size-15"
              data-x="865"
-             data-y="460"
+             data-y="500"
              data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
              data-speed="800"
              data-start="1500"
@@ -43,7 +43,7 @@
              data-endspeed="300"
              data-endeasing="Power1.easeIn"
              data-captionhidden="on"
-             style="z-index: 5"><a href="{{ $slide->call_to_action_url }}" title="{{ $slide->call_to_action_text }}" class="">Xem thêm</a>
+             style="z-index: 5;"><a href="{{ $slide->call_to_action_url }}" title="{{ $slide->call_to_action_text }}" class="">Xem thêm</a>
         </div>
         <!-- LAYER NR. 8s -->
     </li>
