@@ -1,7 +1,7 @@
 @foreach ($slider->slides as $slide)
     <li data-transition="random" data-slotamount="6" data-masterspeed="1000" >
         <!-- MAIN IMAGE -->
-        <img src="{{ $slide->file->path }}"  alt="Futurelife-home2-slideshow"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+        <img src="{{ $slide->file->path }}"  alt="Futurelife-home2-slideshow"  data-bgfit="cover" data-bgposition="center" data-bgrepeat="no-repeat">
 
         <!-- LAYER NR. 9 -->
         <div class="tp-caption color-ea8800 customin randomrotateout font-ro tp-resizeme size-130 weight-300 uppercase"
@@ -43,7 +43,7 @@
              data-endspeed="300"
              data-endeasing="Power1.easeIn"
              data-captionhidden="on"
-             style="z-index: 5;"><a href="{{ $slide->call_to_action_url }}" title="{{ $slide->call_to_action_text }}" class="">Xem thêm</a>
+             style="z-index: 5;"><a href="{{ $slide->call_to_action_url }}" title="{{ $slide->call_to_action_text }}" class="" style="font-size: 15px !important;">Xem thêm</a>
         </div>
         <!-- LAYER NR. 8s -->
     </li>
