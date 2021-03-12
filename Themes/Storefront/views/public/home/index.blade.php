@@ -18,86 +18,25 @@
         <div class="shipping-v2 home3-shiping space-30">
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <img src="{{ asset('assets/images/icon-shipping-1.png') }}" alt="images">
-                <h3>Miễn phí ship</h3>
-                <p>Cho đơn hàng trên 5.000.000 đ</p>
+                <h3>Giao hàng nội thành miễn phí nội thành</h3>
+                <p>Cho đơn hàng từ 500.000 trở lên</p>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <img src="{{ asset('assets/images/icon-shipping-2.png') }}" alt="images">
-                <h3>Hỗ trợ</h3>
-                <p>Nhiệt tình 24/7</p>
+                <h3>Hàng tươi mỗi ngày</h3>
+                <p>Từ trang trại đến tay người dùng</p>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <img src="{{ asset('assets/images/icon-shipping-3.png') }}" alt="images">
-                <h3>Trợ giúp</h3>
-                <p>Đối tác</p>
+                <h3>Tham quan trang trại</h3>
+                <p>Trang trại sạch đảm bảo chất lượng</p>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <img src="{{ asset('assets/images/icon-shipping-4.png') }}" alt="images">
-                <h3>Liên hệ với chúng tôi</h3>
-                <p>+07 (0) 7782 9137</p>
+                <h3>Hotline</h3>
+                <p>Liên hệ 24/7</p>
             </div>
         </div>
-    </div>
-    @if($categories->count() > 0)
-        @foreach($categories as $category)
-            @php $indexFirst = $loop->index * 5 @endphp
-            <div class="container container-ver2">
-                <div class="title-text-v2">
-                    <h3>{{ $category->name }}</h3>
-                </div>
-                <div class="featured-products home_2 new-arrivals lastest">
-                    <ul class="tabs tabs-title">
-                        @if($category->children->count() > 0)
-                            @foreach($category->children as $children)
-                                <li class="item @if($loop->iteration == 1) active @endif" rel="tab_{{ $loop->index + 1 + $indexFirst }}">{{ $children->name }}</li>
-                            @endforeach
-                        @endif
-                    </ul>
-                    <div class="tab-container space-10">
-                        @if($category->children->count() > 0)
-                            @foreach($category->children as $children)
-                                <div id="tab_{{$loop->index + 1 + $indexFirst}}" class="tab-content @if($loop->iteration == 1) {{ 'active' }} @endif"><br>
-                                    <div class="products hover-shadow ver2 border-space-product">
-                                        @if($children->products->count() > 0)
-                                            @foreach($children->products as $product)
-                                                <div class="product">
-                                                    <div class="product-images">
-                                                        <a href="{{ route('products.show', $product->slug) }}">
-                                                            <img src="{{ $product->base_image->path }}" class="primary_image"/>
-                                                            <img src="{{ $product->base_image->path }}" class="secondary_image"/>
-                                                        </a>
-                                                    </div>
-                                                    <a href="{{ route('products.show', $product->slug) }}" title="{{ $product->name }}"><p class="product-title">{{ $product->name }}</p></a>
-                                                    <p class="product-price">{{ product_price($product) }}</p>
-                                                </div>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                </div>
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
-                <div class="box center space-padding-tb-30 space-50">
-                    <a class="link-v1 color-brand font-300" href="" title="Xem tất cả">Xem tất cả</a>
-                </div>
-            </div>
-        @endforeach
-    @endif
-    <div class="special home_v1 bg-images box space-100" style="background-image:url('assets/images/home1-banner1.jpg');background-repeat: no-repeat;">
-        <div class="col-md-5 float-left align-right">
-            <img class="images-logo" src="{{ asset('assets/images/home1-images-banner1.png') }}" alt="images">
-        </div>
-        <!-- End col-md-7 -->
-        <div class="col-md-7 float-right align-left">
-            <div class="special-content">
-                <img class="icon-big" src="{{ asset('assets/images/icon-shipping-5.png') }}" alt="Giảm giá lớn hôm nay"><h3>GIẢM GIÁ LỚN NGAY HÔM NAY</h3>
-                <h5>Được giảm giá 30% cho đơn hàng từ 100 đô la trở lên của bạn ...</h5>
-                <div class="time" data-countdown="countdown" data-date="04-20-2017-10-20-30"><div class="labelexpired"> Đã hết hạn</div></div>
-                <a class="link-v1 bg-brand font-300" href="#" title="shopnow">Mua ngay</a>
-            </div>
-        </div>
-        <!-- End col-md-5 -->
     </div>
     <div class="choose-us">
         <div class="container container-ver2">
@@ -162,6 +101,92 @@
         </div>
         <!--End container-->
     </div>
+    @if($categories->count() > 0)
+        @foreach($categories as $category)
+            @php $indexFirst = $loop->index * 5 @endphp
+            <div class="container container-ver2">
+                <div class="title-text-v2">
+                    <h3>{{ $category->name }}</h3>
+                </div>
+                <div class="featured-products home_2 new-arrivals lastest">
+                    <ul class="tabs tabs-title">
+                        @if($category->children->count() > 0)
+                            @foreach($category->children as $children)
+                                <li class="item @if($loop->iteration == 1) active @endif" rel="tab_{{ $loop->index + 1 + $indexFirst }}">{{ $children->name }}</li>
+                            @endforeach
+                        @endif
+                    </ul>
+                    <div class="tab-container space-10">
+                        @if($category->children->count() > 0)
+                            @foreach($category->children as $children)
+                                <div id="tab_{{$loop->index + 1 + $indexFirst}}" class="tab-content @if($loop->iteration == 1) {{ 'active' }} @endif"><br>
+                                    <div class="products hover-shadow ver2 border-space-product">
+                                        @if($children->products->count() > 0)
+                                            @foreach($children->products as $product)
+                                                <div class="product">
+                                                    <div class="product-images">
+                                                        <a href="{{ route('products.show', $product->slug) }}">
+                                                            <img src="{{ $product->base_image->path }}" class="primary_image"/>
+                                                            <img src="{{ $product->base_image->path }}" class="secondary_image"/>
+                                                        </a>
+                                                    </div>
+                                                    <a href="{{ route('products.show', $product->slug) }}" title="{{ $product->name }}"><p class="product-title">{{ $product->name }}</p></a>
+                                                    <p class="product-price">{{ product_price($product) }}</p>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <div class="box center space-padding-tb-30 space-50">
+                    <a class="link-v1 color-brand font-300" href="" title="Xem tất cả">Xem tất cả</a>
+                </div>
+            </div>
+        @endforeach
+    @endif
+    <div class="special home_v1 bg-images box space-100" style="background-image:url('assets/images/home1-banner1.jpg');background-repeat: no-repeat;">
+        <div class="col-md-5 float-left align-right">
+            <img class="images-logo" src="{{ asset('assets/images/home1-images-banner1.png') }}" alt="images">
+        </div>
+        <!-- End col-md-7 -->
+        <div class="col-md-7 float-right align-left">
+            <div class="special-content">
+                <img class="icon-big" src="{{ asset('assets/images/icon-shipping-5.png') }}" alt="Giảm giá lớn hôm nay"><h3>GIẢM GIÁ LỚN NGAY HÔM NAY</h3>
+                <h5>Được giảm giá 30% cho đơn hàng từ 100 đô la trở lên của bạn ...</h5>
+                <div class="time" data-countdown="countdown" data-date="04-20-2017-10-20-30"><div class="labelexpired"> Đã hết hạn</div></div>
+                <a class="link-v1 bg-brand font-300" href="#" title="shopnow">Mua ngay</a>
+            </div>
+        </div>
+        <!-- End col-md-5 -->
+    </div>
+    @if($posts->count() >0 )
+        <div class="container container-ver2 blog-home1">
+            <div class="title-text-v2">
+                <div class="icon-title align-center space-20">
+                    <img src="assets/images/title-lastest-from.png" alt="icon-title">
+                </div>
+                <h3>Bài viết</h3>
+                <a class="link padding-bt-20" href="#" title="Xem tất cả">Xem tất cả</a>
+            </div>
+            <div class="blog-content slider-three-item owl-carousel">
+                @foreach($posts as $post)
+                    <div class="item">
+                        <a class="hover-images" href="{{ route('posts.show', $post->slug) }}" title="images">
+                            <img class="img-responsive" src="{{ optional($post->base_image)->path }}" alt="blog">
+                        </a>
+                        <div class="text">
+                            <p class="date">{{ $post->created_at }}</p>
+                            <a href="{{ route('posts.show', $post->slug) }}" title="title"><h3>{{ $post->title }}</h3></a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <!-- End blog-content -->
+        </div>
+    @endif
     <div class="bg-slider-one-item space-50">
         <div class="slider-dot-images">
             <div class="container container-ver2 center">
@@ -277,29 +302,4 @@
             <!--End container-->
         </div>
     </div>
-    @if($posts->count() >0 )
-        <div class="container container-ver2 blog-home1">
-            <div class="title-text-v2">
-                <div class="icon-title align-center space-20">
-                    <img src="assets/images/title-lastest-from.png" alt="icon-title">
-                </div>
-                <h3>Bài viết</h3>
-                <a class="link padding-bt-20" href="#" title="Xem tất cả">Xem tất cả</a>
-            </div>
-            <div class="blog-content slider-three-item owl-carousel">
-                @foreach($posts as $post)
-                <div class="item">
-                    <a class="hover-images" href="{{ route('posts.show', $post->slug) }}" title="images">
-                        <img class="img-responsive" src="{{ optional($post->base_image)->path }}" alt="blog">
-                    </a>
-                    <div class="text">
-                        <p class="date">{{ $post->created_at }}</p>
-                        <a href="{{ route('posts.show', $post->slug) }}" title="title"><h3>{{ $post->title }}</h3></a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            <!-- End blog-content -->
-        </div>
-    @endif
 @endsection

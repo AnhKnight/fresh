@@ -2,6 +2,8 @@
 
 namespace Modules\Category\Entities;
 
+use Modules\Media\Eloquent\HasMedia;
+use Modules\Media\Entities\File;
 use Modules\Product\Entities\Product;
 use TypiCMS\NestableTrait;
 use Modules\Support\Eloquent\Model;
@@ -11,7 +13,7 @@ use Modules\Support\Eloquent\Translatable;
 
 class Category extends Model
 {
-    use Translatable, Sluggable, NestableTrait;
+    use Translatable, Sluggable, NestableTrait, HasMedia;
 
     /**
      * The relations to eager load on every query.
@@ -115,5 +117,17 @@ class Category extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class, 'product_categories');
+    }
+
+    public function getBaseImageAttribute()
+    {
+        return $this->files->where('pivot.zone', 'base_image')->first() ?: new File;
+    }
+
+    public function getAdditionalImagesAttribute()
+    {
+        return $this->files
+            ->where('pivot.zone', 'additional_images')
+            ->sortBy('pivot.id');
     }
 }

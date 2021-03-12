@@ -96,8 +96,17 @@ export default class {
 
         $('#slug').val(category.slug);
         $('#slug-field').removeClass('hide');
-        $('.category-details-tab .seo-tab').removeClass('hide');
 
+        $('#img-default').css('display', 'none');
+        $('#image-category').css('display', 'none');
+        if (category.files && category.files.length > 0) {
+            $('#image-category').css('display', 'block');
+            $('#image-category').attr('src',category.files[0].path);
+        }else{
+            $('#img-default').css('display', 'block');
+        }
+
+        $('.category-details-tab .seo-tab').removeClass('hide');
         $('#is_searchable').prop('checked', category.is_searchable);
         $('#is_active').prop('checked', category.is_active);
 

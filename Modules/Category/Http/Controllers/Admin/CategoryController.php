@@ -47,7 +47,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return Category::withoutGlobalScope('active')->find($id);
+        return Category::withoutGlobalScope('active')->with('files')->find($id);
     }
 
     /**
