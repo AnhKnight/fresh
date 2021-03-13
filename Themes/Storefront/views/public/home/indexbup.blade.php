@@ -103,9 +103,6 @@
     </div>
 
     <div class="container container-ver2 banner-home4">
-        <div class="section-header">
-            <h3 style="margin-bottom: 10px;">Danh mục sản phẩm</h3>
-        </div>
         <div class="catbox-container home-4">
             <div class="row">
                 @if($categories->count() > 0)
@@ -126,40 +123,52 @@
         </div>
     </div>
 
-    @if (setting('storefront_product_carousel_section_enabled'))
-        <div class="container container-ver2 space-30">
-            @include('public.home.sections.product_carousel', [
-                'title' => setting('storefront_product_carousel_section_title'),
-                'products' => $sellingProducts
-            ])
-        </div>
+    @if($categories->count() > 0)
+        @foreach($categories as $category)
+            @php $indexFirst = $loop->index * 5 @endphp
+            <div class="container container-ver2">
+                <div class="title-text-v2">
+                    <h3>{{ $category->name }}</h3>
+                </div>
+                <div class="featured-products home_2 new-arrivals lastest">
+                    <ul class="tabs tabs-title">
+                        @if($category->children->count() > 0)
+                            @foreach($category->children as $children)
+                                <li class="item @if($loop->iteration == 1) active @endif" rel="tab_{{ $loop->index + 1 + $indexFirst }}">{{ $children->name }}</li>
+                            @endforeach
+                        @endif
+                    </ul>
+                    <div class="tab-container space-10">
+                        @if($category->children->count() > 0)
+                            @foreach($category->children as $children)
+                                <div id="tab_{{$loop->index + 1 + $indexFirst}}" class="tab-content @if($loop->iteration == 1) {{ 'active' }} @endif"><br>
+                                    <div class="products hover-shadow ver2 border-space-product">
+                                        @if($children->products->count() > 0)
+                                            @foreach($children->products as $product)
+                                                <div class="product">
+                                                    <div class="product-images">
+                                                        <a href="{{ route('products.show', $product->slug) }}">
+                                                            <img src="{{ $product->base_image->path }}" class="primary_image"/>
+                                                            <img src="{{ $product->base_image->path }}" class="secondary_image"/>
+                                                        </a>
+                                                    </div>
+                                                    <a href="{{ route('products.show', $product->slug) }}" title="{{ $product->name }}"><p class="product-title">{{ $product->name }}</p></a>
+                                                    <p class="product-price">{{ product_price($product) }}</p>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <div class="box center space-padding-tb-30 space-50">
+                    <a class="link-v1 color-brand font-300" href="" title="Xem tất cả">Xem tất cả</a>
+                </div>
+            </div>
+        @endforeach
     @endif
-
-    @if (setting('storefront_recent_products_section_enabled'))
-        <div class="container container-ver2 space-30">
-            @include('public.home.sections.recent_products')
-        </div>
-    @endif
-
-{{--    <div class="container container-ver2 banner-home4">--}}
-{{--        <div class="section-header">--}}
-{{--            <h3 style="margin-bottom: 10px;">Video Về Nams</h3>--}}
-{{--        </div>--}}
-{{--        <div class="catbox-container home-4">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">--}}
-{{--                    <div class="items" style="border-radius: 10px !important; overflow: hidden; padding: 7px; background: #ededed; margin-bottom: 10px;">--}}
-{{--                        <iframe width="100%" height="448" src="https://www.youtube.com/embed/TD7sBUigDIU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">--}}
-{{--                    <div class="items" style="border-radius: 10px !important; overflow: hidden; padding: 7px; background: #ededed; margin-bottom: 10px;">--}}
-{{--                        <iframe width="100%" height="448" src="https://www.youtube.com/embed/TD7sBUigDIU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 
     <div class="special home_v1 bg-images box space-100" style="background-image:url('assets/images/home1-banner1.jpg');background-repeat: no-repeat;">
         <div class="col-md-5 float-left align-right">

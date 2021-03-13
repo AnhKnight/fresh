@@ -19,7 +19,7 @@ class HomeController extends Controller
         $posts = Post::with('user')->whereHas('categories', function ($query){
                 $query->where('is_active', 1);
             })->get();
-        $categories = Category::with('children.products')->whereNull('parent_id')->take(5)->get();
+        $categories = Category::whereNull('parent_id')->with('files')->take(6)->get();
         return view('public.home.index', compact('categories', 'posts'));
     }
 }

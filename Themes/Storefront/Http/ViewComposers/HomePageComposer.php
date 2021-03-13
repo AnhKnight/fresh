@@ -40,7 +40,7 @@ class HomePageComposer
             'sliderBanners' => Banner::allForSliderBanners(),
             'bannerSectionOneBanners' => $this->getBannerSectionOneBanners(),
             'features' => $this->getFeatures(),
-            'carouselProducts' => $this->getCarouselProducts(),
+            'sellingProducts' => $this->getCarouselProducts(),
             'recentProducts' => $this->getRecentProducts(),
             'bannerSectionTwoBanner' => $this->getBannerSectionTwoBanner(),
             'threeColumnCarouselProducts' => $this->getThreeColumnCarouselProducts(),

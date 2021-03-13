@@ -1,17 +1,8 @@
 @if ($products->isNotEmpty())
-    <section class="product-slider-wrapper clearfix">
-        <div class="section-header">
-            <h3>{{ $title }}</h3>
-        </div>
-
-        <div class="row">
-            <div class="product-slider slick-arrow separator clearfix">
-                @foreach ($products as $product)
-                    <div class="col-md-3">
-                        @include('public.products.partials.product_card')
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+    <div class="section-header">
+        <h3 style="text-align: center;">{{ $title }}</h3>
+    </div>
+    @foreach ($products as $product)
+        @include('public.products.partials.product_card')
+    @endforeach
 @endif
