@@ -44,6 +44,7 @@
                 { data: 'thumbnail', orderable: false, searchable: false, width: '10%' },
                 { data: 'filename', name: 'filename', width: '10%' },
                 { data: 'created', name: 'created_at', width: '25%' },
+                { data: 'selected', name: 'selected', width: '25%' },
             ],
         });
     </script>

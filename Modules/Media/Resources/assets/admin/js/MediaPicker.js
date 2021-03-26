@@ -27,7 +27,7 @@ export default class {
             multiple: this.options.multiple,
         });
 
-        return $(`<iframe class="file-manager-iframe" frameborder="0" src="${src}"></iframe>`);
+        return $(`<iframe class="file-manager-iframe" frameborder="0" src="${src}" style="width: 100% !important;"></iframe>`);
     }
 
     appendModalToBody() {
