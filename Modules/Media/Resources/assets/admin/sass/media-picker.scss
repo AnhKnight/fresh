@@ -1,10 +1,10 @@
 .file-manager-iframe {
-	width: 100%;
-	vertical-align: bottom;
+    width: 100%;
+    vertical-align: bottom;
 }
 
 .file-manager {
-	background: #f9f9f9;
+    background: #f9f9f9;
     margin-top: 20px;
 
     #notification-toast {
@@ -71,7 +71,7 @@
 }
 
 @media screen and (max-width: 767px) {
-	.media-picker-modal .modal-dialog {
-		margin: 10px;
-	}
+    .media-picker-modal .modal-dialog {
+        margin: 10px;
+    }
 }
