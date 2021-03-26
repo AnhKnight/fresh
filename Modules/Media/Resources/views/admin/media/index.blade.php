@@ -40,11 +40,10 @@
 
         new DataTable('#media-table .table', {
             columns: [
-                { data: 'checkbox', orderable: false, searchable: false, width: '5%' },
+                { data: 'checkbox', orderable: false, searchable: false, width: '3%' },
                 { data: 'thumbnail', orderable: false, searchable: false, width: '10%' },
-                { data: 'filename', name: 'filename', width: '10%' },
-                { data: 'created', name: 'created_at', width: '25%' },
-                { data: 'selected', name: 'selected', width: '25%' },
+                { data: 'filename', name: 'filename' },
+                { data: 'created', name: 'created_at' },
             ],
         });
     </script>
