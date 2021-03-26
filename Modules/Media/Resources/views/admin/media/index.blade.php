@@ -41,9 +41,9 @@
         new DataTable('#media-table .table', {
             columns: [
                 { data: 'checkbox', orderable: false, searchable: false, width: '5%' },
-                { data: 'thumbnail', orderable: false, searchable: false, width: '15%' },
-                { data: 'filename', name: 'filename', width: '15%' },
-                { data: 'created', name: 'created_at', width: '15%' },
+                { data: 'thumbnail', orderable: false, searchable: false, width: '10%' },
+                { data: 'filename', name: 'filename', width: '10%' },
+                { data: 'created', name: 'created_at', width: '25%' },
             ],
         });
     </script>
