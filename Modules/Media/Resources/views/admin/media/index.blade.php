@@ -42,8 +42,8 @@
             columns: [
                 { data: 'checkbox', orderable: false, searchable: false, width: '3%' },
                 { data: 'thumbnail', orderable: false, searchable: false, width: '10%' },
-                { data: 'filename', name: 'filename' },
-                { data: 'created', name: 'created_at' },
+                { data: 'filename', name: 'filename', width: '10%' },
+                { data: 'created', name: 'created_at', width: '10%' },
             ],
         });
     </script>
