@@ -5,7 +5,7 @@
                 @include('admin::partials.table.select_all')
 
                 <th>{{ trans('media::media.table.thumbnail') }}</th>
-                <th style="width: 20px !important;">{{ trans('media::media.table.filename') }}</th>
+                <th>{{ trans('media::media.table.filename') }}</th>
                 <th data-sort>{{ trans('admin::admin.table.created') }}</th>
 
                 @unless (request()->routeIs('admin.media.index'))

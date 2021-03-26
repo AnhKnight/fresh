@@ -42,7 +42,7 @@
             columns: [
                 { data: 'checkbox', orderable: false, searchable: false, width: '5%' },
                 { data: 'thumbnail', orderable: false, searchable: false, width: '5%' },
-                { data: 'filename', name: 'filename', width: '5%' },
+                { data: 'filename', name: 'filename', width: '50px' },
                 { data: 'created', name: 'created_at', width: '5%' },
             ],
         });
