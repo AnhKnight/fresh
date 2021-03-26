@@ -9,7 +9,7 @@ Route::get('media', [
 Route::post('media', [
     'as' => 'admin.media.store',
     'uses' => 'MediaController@store',
-    'middleware' => 'can:admin.media.create',
+//    'middleware' => ['can:admin.media.create', 'optimizeImages'],
 ]);
 
 Route::delete('media/{ids?}', [

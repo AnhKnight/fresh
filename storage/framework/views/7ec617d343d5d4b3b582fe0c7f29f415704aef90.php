@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ locale() }}">
+<html lang="<?php echo e(locale()); ?>">
 <head>
     <meta charset="UTF-8">
 
-    <title>{{ trans('media::media.file_manager.title') }}</title>
+    <title><?php echo e(trans('media::media.file_manager.title')); ?></title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto" rel="stylesheet">
 
-    @foreach ($assets->allCss() as $css)
-        <link media="all" type="text/css" rel="stylesheet" href="{{ v($css) }}">
-    @endforeach
+    <?php $__currentLoopData = $assets->allCss(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $css): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <link media="all" type="text/css" rel="stylesheet" href="<?php echo e(v($css)); ?>">
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-    @include('admin::partials.globals')
+    <?php echo $__env->make('admin::partials.globals', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 </head>
 
 <body class="file-manager">
 <div class="container">
-    @include('media::admin.media.partials.uploader')
+    <?php echo $__env->make('media::admin.media.partials.uploader', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-                @include('media::admin.media.partials.table')
+                <?php echo $__env->make('media::admin.media.partials.table', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             </div>
         </div>
     </div>
@@ -31,17 +31,17 @@
 
 <div id="notification-toast"></div>
 
-@include('admin::partials.confirmation_modal')
+<?php echo $__env->make('admin::partials.confirmation_modal', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-@foreach ($assets->allJs() as $js)
-    <script src="{{ v($js) }}"></script>
-@endforeach
+<?php $__currentLoopData = $assets->allJs(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $js): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <script src="<?php echo e(v($js)); ?>"></script>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 <script>
     DataTable.setRoutes('.file-manager .table', {
         index: {
             name: 'admin.media.index',
-            params: { type: '{{ $type }}', for_editor: '{{ request()->for_editor }}'  }
+            params: { type: '<?php echo e($type); ?>', for_editor: '<?php echo e(request()->for_editor); ?>'  }
         },
         destroy: 'admin.media.destroy',
     });

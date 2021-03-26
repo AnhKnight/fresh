@@ -56,7 +56,7 @@ export default class {
         $('.image-holder-wrapper').on('click', '.remove-image', (e) => {
             e.preventDefault();
 
-            console.log(e.currentTarget.dataset);
+            // console.log(e.currentTarget.dataset);
             let imageHolderWrapper = $(e.currentTarget).closest('.image-holder-wrapper');
 
             if (imageHolderWrapper.find('.image-holder').length === 1) {

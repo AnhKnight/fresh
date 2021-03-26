@@ -25,7 +25,8 @@ class MediaTable extends AdminTable
                 return view('media::admin.media.partials.table.thumbnail', compact('file'));
             })
             ->addColumn('action', function ($file) {
-                return view('media::admin.media.partials.table.action', compact('file'));
+                $forEditor = request()->for_editor;
+                return view('media::admin.media.partials.table.action', compact('file', 'forEditor'));
             });
     }
 }
