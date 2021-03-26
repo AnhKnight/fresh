@@ -23,8 +23,8 @@ class MediaTable extends AdminTable
         return $this->newTable()
             ->editColumn('thumbnail', function ($file) {
                 return view('media::admin.media.partials.table.thumbnail', compact('file'));
-            })->editColumn('filename', function ($filename) {
-                return str_limit($filename->filename, 15);
+            })->editColumn('filename', function ($file) {
+                return str_limit($file->filename, 15);
             })
             ->addColumn('action', function ($file) {
                 $forEditor = request()->for_editor;
