@@ -20,6 +20,17 @@ class SavePostRequest extends Request
      */
     public function rules()
     {
-        return [];
+        return [
+            'short_description' => ['required', 'max:160'],
+            'title' => ['required', 'max:160'],
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+           'short_description' => 'Mô tả ngắn',
+           'title' => 'Tiêu đề',
+        ];
     }
 }
