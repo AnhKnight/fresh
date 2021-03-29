@@ -12,7 +12,7 @@
 				autoStart: true,
 				LeadingZero:true,
 				DisplayFormat:"<div><span>%%D%%</span> Days</div><div><span>%%H%%</span> Hours</div><div><span>%%M%%</span> Mins</div><div><span>%%S%%</span> Secs</div>",
-				FinishMessage:"Đã hết hạn",
+				FinishMessage:"Giảm giá sốc",
 				CountActive:true,
 				TargetDate:null
 		}, options || {} );
@@ -76,7 +76,7 @@
             $this.ENGO_CountDown({
                 TargetDate:$date[0]+"/"+$date[1]+"/"+$date[2]+" "+$date[3]+":"+$date[4]+":"+$date[5],
                 DisplayFormat:"<div class=\"countdown-times\"><div class=\"day distance\"><div class='number'>%%D%%</div> <div class='text'>days </div></div><div class=\"hours distance\"><div class='number'>%%H%%</div><div class='text'> <div class='text'>hours </div></div></div><div class=\"minutes distance\"><div class='number'>%%M%%</div><div class='text'> mins</div> </div><div class=\"seconds distance\"><div class='number'>%%S%%</div> <div class='text'>secs</div> </div></div>",
-                FinishMessage: "Đã hết hạn"
+                FinishMessage: "Giảm giá sốc"
             });
         });
 	});

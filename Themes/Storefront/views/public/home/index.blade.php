@@ -104,7 +104,7 @@
 
     <div class="container container-ver2 banner-home4">
         <div class="section-header">
-            <h3 style="margin-bottom: 10px;">Danh mục sản phẩm</h3>
+            <h3 style="margin-bottom: 10px; font-size: 25px;">Danh mục sản phẩm</h3>
         </div>
         <div class="catbox-container home-4">
             <div class="row">
@@ -170,7 +170,7 @@
             <div class="special-content">
                 <img class="icon-big" src="{{ asset('assets/images/icon-shipping-5.png') }}" alt="Giảm giá lớn hôm nay"><h3>GIẢM GIÁ LỚN NGAY HÔM NAY</h3>
                 <h5>Được giảm giá 30% cho đơn hàng từ 100 đô la trở lên của bạn ...</h5>
-                <div class="time" data-countdown="countdown" data-date="04-20-2017-10-20-30"><div class="labelexpired"> Đã hết hạn</div></div>
+                <div class="time" data-countdown="countdown" data-date="04-20-2017-10-20-30"><div class="labelexpired"> Giảm giá sốc</div></div>
                 <a class="link-v1 bg-brand font-300" href="#" title="shopnow">Mua ngay</a>
             </div>
         </div>
@@ -182,7 +182,7 @@
                 <div class="icon-title align-center space-20">
                     <img src="assets/images/title-lastest-from.png" alt="icon-title">
                 </div>
-                <h3>Bài viết</h3>
+                <h3 style="font-size: 25px;">Bài viết</h3>
                 <a class="link padding-bt-20" href="#" title="Xem tất cả">Xem tất cả</a>
             </div>
             <div class="blog-content slider-three-item owl-carousel">
