@@ -6996,6 +6996,10 @@ ul.tabs.tabs-title li span.count {
   }
 }
 
+.blog-post-item{
+    min-height: 325px;
+}
+
 .blog-post-container.blog-post-columns-2 .blog-post-item {
   width: 50%;
   box-shadow: 0px 0px 26.73px 0.27px rgba(86, 86, 86, 0.08);

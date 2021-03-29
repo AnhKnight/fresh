@@ -208,84 +208,12 @@
                     <div>
                         <img src="assets/images/about1.jpg" alt="images">
                     </div>
-                    <div>
-                        <img src="assets/images/about2.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about3.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about4.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about5.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about1.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about2.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about3.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about4.jpg" alt="images">
-                    </div>
-                    <div>
-                        <img src="assets/images/about5.jpg" alt="images">
-                    </div>
                 </div>
                 <div class="slider-for">
                     <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
-                    </div>
-                    <div>
-                        <p>I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
-                        <h3>JONATHAN VANCE</h3>
-                        <a href="#" title="CEO">CEO &amp; Founder</a>
+                        <p>Tôi hiếm khi viết đánh giá cho các sản phẩm nhưng với nams.vn, tôi rất biết ơn. Trang web ! Cảm ơn một lần nữa vì đã tạo ra một trang web tiện lợi đầy đủ thông tin như vậy.</p>
+                        <h3>Nguyễn Văn Test</h3>
+                        <a href="#" title="CEO">Nhà sáng lập Nams.vn</a>
                     </div>
                 </div>
                 <!-- End slider-for -->
