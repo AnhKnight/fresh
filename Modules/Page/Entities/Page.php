@@ -2,6 +2,7 @@
 
 namespace Modules\Page\Entities;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Admin\Ui\AdminTable;
 use Modules\Support\Eloquent\Model;
 use Modules\Meta\Eloquent\HasMetaData;
@@ -10,7 +11,9 @@ use Modules\Support\Eloquent\Translatable;
 
 class Page extends Model
 {
-    use Translatable, Sluggable, HasMetaData;
+    use Translatable, Sluggable, HasMetaData, SoftDeletes;
+
+    protected $dates = ['deleted_at'];
 
     /**
      * The relations to eager load on every query.
