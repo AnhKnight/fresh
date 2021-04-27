@@ -3,6 +3,7 @@
 namespace Modules\Post\Entities;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Request;
 use Modules\Media\Eloquent\HasMedia;
 use Modules\Media\Entities\File;
@@ -16,7 +17,7 @@ use TypiCMS\NestableTrait;
 
 class Post extends Model
 {
-    use Translatable, Sluggable, HasMedia, HasMetaData, NestableTrait;
+    use Translatable, Sluggable, HasMedia, HasMetaData, NestableTrait, SoftDeletes;
 
     /**
      * The relations to eager load on every query.
@@ -24,6 +25,7 @@ class Post extends Model
      * @var array
      */
     protected $with = ['translations', 'user'];
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that are mass assignable.
